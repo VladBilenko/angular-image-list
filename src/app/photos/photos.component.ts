@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PhotosItemsService} from './services/photos-items.service';
+import {SortTypes} from './enums/sort-types.enum';
+import {PhotoItem} from './models/photos-item.model';
 
 @Component({
   selector: 'app-photos',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private photosItemsService: PhotosItemsService) { }
 
-  ngOnInit() {
+  public ngOnInit() {
+    this.getPhotos();
+  }
+
+  private getPhotos() {
+    this.photosItemsService.fetchMockPhotos(SortTypes.ByName).subscribe(
+      (photos: PhotoItem[]) => console.log(photos),
+      err => console.log(err)
+    );
   }
 
 }

@@ -1,0 +1,15 @@
+@import "../../../../assets/style/vars.scss";
+@import "../../../../assets/style/mixins.scss";
+
+.main-logo {
+  &__container {
+      @include flex-between-center;
+      font-size: 1.5rem;
+      padding-left: 2rem;
+  }
+
+  &__text {
+    padding-left: 1rem;
+    font-size: 1.1rem;
+  }
+}

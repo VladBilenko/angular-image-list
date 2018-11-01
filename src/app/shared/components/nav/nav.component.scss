@@ -1,0 +1,30 @@
+@import "../../../../assets/style/vars.scss";
+@import "../../../../assets/style/mixins.scss";
+
+.main-nav {
+  &__container {
+    @include flex-column-start;
+    padding: 2rem 0;
+    font-size: 1.3rem;
+    color: $main-page-white-color;
+  }
+
+  &__link {
+    @include flex-start-center;
+    @include default-transition(color);
+    padding-bottom: 1rem;
+    &:hover {
+      color: $main-page-blue-color;
+    }
+
+    &.active {
+      color: $main-page-orange-color;
+    }
+  }
+
+  &__icon {
+    text-align: center;
+    font-size: 1.6rem;
+    min-width: 2.5rem;
+  }
+}

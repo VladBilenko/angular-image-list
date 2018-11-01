@@ -1,0 +1,6 @@
+<nav class="main-nav__container">
+  <a class="main-nav__link" *ngFor="let navItem of navListConfig" [routerLink]="[navItem.link]" [queryParams]="navItem.queryParams" routerLinkActive="active">
+    <div class="main-nav__icon"><fa-icon [icon]="navItem.icon"></fa-icon></div>
+    {{navItem.text}}
+  </a>
+</nav>

@@ -1,15 +1,13 @@
 <mat-drawer-container class="page-container" autosize>
   <mat-drawer #drawer class="page-sidenav" mode="side">
     <h1>Images</h1>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Nav
-    </button>
-    <p *ngIf="showFiller">Images</p>
+    <app-nav></app-nav>
   </mat-drawer>
 
   <div class="page-sidenav-content">
+    <app-logo></app-logo>
     <button type="button" mat-button (click)="drawer.toggle()">
-      Menu
+      Menu <mat-icon>more_vert</mat-icon>
     </button>
   </div>
 

@@ -1,3 +1,6 @@
+@import "../assets/style/vars.scss";
+@import "../assets/style/mixins.scss";
+
 .page-container {
   position: fixed;
   top: 0;
@@ -7,9 +10,15 @@
 }
 
 .page-sidenav-content {
-
+  @include flex-between-center;
+  padding: 1rem;
+  justify-content: space-between;
+  background-color: $main-page-blue-color;
+  color: $main-page-white-color;
 }
 
 .page-sidenav {
-  padding: 20px;
+  padding: 1.5rem 2.5rem;
+  background-color: $main-page-purple-color;
+  color: $main-page-white-color;
 }

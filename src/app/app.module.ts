@@ -4,8 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatSidenavModule} from '@angular/material';
 import {CoreModule} from './core/core.module';
+import {AppSharedModule} from './shared/app-shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,11 @@ import {CoreModule} from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    AppSharedModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

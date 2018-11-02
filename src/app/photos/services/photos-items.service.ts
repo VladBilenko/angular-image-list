@@ -1,7 +1,6 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import mockPhotos from '../mocks/photos.mock.json';
+import * as mockPhotos from '../mocks/photos.mock.json';
 import {SortTypes} from '../enums/sort-types.enum';
-import {PhotoItem} from '../models/photos-item.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,19 +15,16 @@ export class PhotosItemsService {
   }
 
   private mockHttpRequest(sortType: SortTypes) {
-    setTimeout(() => (this.mockHttp.emit(this.sortBy(mockPhotos.photos, sortType))), 1200);
+    setTimeout(() => (this.mockHttp.emit(this.sortByParam(mockPhotos.photos, sortType))), 1200);
   }
 
-  private sortBy(items: PhotoItem[], sortType: SortTypes) {
-    switch (sortType) {
-      case SortTypes.ByName :
-        return items;
-      case SortTypes.ByDate :
-        return items;
-      case SortTypes.BySize :
-        return items;
-      default :
-        return items;
+  private sortByParam(items: any, sortType: SortTypes) {
+    return items.sort(
+      (firstItem: any, secondItem: any) => {
+      // console.log(firstItem[sortType], secondItem[sortType])
+      return firstItem[sortType] - secondItem[sortType];
     }
+    );
   }
+
 }

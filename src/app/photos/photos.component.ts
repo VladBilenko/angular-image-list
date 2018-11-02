@@ -9,18 +9,35 @@ import {PhotoItem} from './models/photos-item.model';
   styleUrls: ['./photos.component.scss']
 })
 export class PhotosComponent implements OnInit {
+  private requestSubscription;
+  public sortTypes = {
+    name: SortTypes.ByName,
+    size: SortTypes.BySize,
+    date: SortTypes.ByDate
+  };
+  public selectedSorting = this.sortTypes.name;
+  public photos: PhotoItem[];
 
-  constructor(private photosItemsService: PhotosItemsService) { }
+  constructor(private photosItemsService: PhotosItemsService) {
+  }
 
   public ngOnInit() {
     this.getPhotos();
   }
 
   private getPhotos() {
-    this.photosItemsService.fetchMockPhotos(SortTypes.ByName).subscribe(
-      (photos: PhotoItem[]) => console.log(photos),
+     this.requestSubscription = this.photosItemsService.fetchMockPhotos(this.selectedSorting).subscribe(
+      (photos: PhotoItem[]) => {
+        this.photos = photos;
+        this.requestSubscription.unsubscribe();
+      },
       err => console.log(err)
     );
+  }
+
+  private changeSort(sortType: any) {
+    this.selectedSorting = sortType.value;
+    this.getPhotos();
   }
 
 }

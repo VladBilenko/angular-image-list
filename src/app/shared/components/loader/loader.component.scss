@@ -1,0 +1,6 @@
+@import "../../../../assets/style/vars.scss";
+@import "../../../../assets/style/mixins.scss";
+
+.main-loader {
+  @include flex-column-center;
+}

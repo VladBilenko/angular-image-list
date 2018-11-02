@@ -1,5 +1,11 @@
-@mixin default-transition($property) {
-  transition: $property 0.35s;
+@mixin transition($property, $time) {
+  transition: $property $time;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flex-between-center {
@@ -18,4 +24,19 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-wrap-between-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }

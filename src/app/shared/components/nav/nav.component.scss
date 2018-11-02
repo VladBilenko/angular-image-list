@@ -11,7 +11,7 @@
 
   &__link {
     @include flex-start-center;
-    @include default-transition(color);
+    @include transition(color, 0.35s);
     padding-bottom: 1rem;
     &:hover {
       color: $main-page-blue-color;

@@ -1,3 +1,18 @@
-<p>
-  photos works!
-</p>
+<app-content-container pageTitle="Photos">
+  <div class="photos__sorting">
+    <span class="sorting__label">Sort by:</span>
+    <mat-button-toggle-group name="sortType" aria-label="Sort type" [value]="selectedSorting" (change)="changeSort($event)" >
+      <mat-button-toggle [value]="sortTypes.name" >Name</mat-button-toggle>
+      <mat-button-toggle [value]="sortTypes.size">Size</mat-button-toggle>
+      <mat-button-toggle [value]="sortTypes.date">Date</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class="photos" *ngIf="photos; else loader">
+    <div class="photos__container">
+      <app-photo-item *ngFor="let photo of photos" [imageData]="photo"></app-photo-item>
+    </div>
+  </div>
+  <ng-template #loader>
+    <app-loader></app-loader>
+  </ng-template>
+</app-content-container>

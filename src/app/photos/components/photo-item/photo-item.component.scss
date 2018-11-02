@@ -1,0 +1,43 @@
+@import "../../../../assets/style/vars.scss";
+@import "../../../../assets/style/mixins.scss";
+
+:host {
+  width: 23%;
+  margin-bottom: 2rem;
+}
+
+.photo__item {
+  border: 1px solid $main-page-gray-color;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 10px 10px 54px -9px $main-page-gray-color;
+    @include transition(box-shadow, 0.5s);
+
+    & .image__item {
+      @include transition(transform, 0.5s);
+      transform: scale(1.1);
+    }
+  }
+}
+
+.image {
+  &__container {
+    height: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__info {
+    padding: 1rem;
+  }
+
+  &__item {
+    @include transition(transform, 0.5s);
+    transform: scale(1);
+    display: block;
+    height: 150%;
+  }
+}

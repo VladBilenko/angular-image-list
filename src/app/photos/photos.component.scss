@@ -1,0 +1,17 @@
+@import "../../assets/style/vars.scss";
+@import "../../assets/style/mixins.scss";
+
+.photos {
+  &__sorting {
+    margin-bottom: 2rem;
+    text-align: right;
+  }
+
+  &__container {
+    @include flex-wrap-between-center;
+  }
+}
+
+.sorting__label {
+  margin-right: 1rem;
+}

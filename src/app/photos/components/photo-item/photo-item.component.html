@@ -1,0 +1,10 @@
+<div class="photo__item">
+  <div class="photo__img image__container">
+    <img class="image__item" [src]="imageData.url" [alt]="imageData.name" />
+  </div>
+  <div class="image__info">
+    <h5 class="image__title">{{imageData.name}}</h5>
+    <p class="image__size">File size: {{imageData.fileSize}} Mb</p>
+    <p class="image__date">Last modified at: {{imageData.lastModifiedDate | date: 'dd.MM.yyyy'}}</p>
+  </div>
+</div>

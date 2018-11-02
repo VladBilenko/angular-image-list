@@ -1,12 +1,16 @@
 <mat-drawer-container class="page-container" autosize>
-  <mat-drawer #drawer class="page-sidenav" mode="side">
+  <mat-drawer #drawer class="page-sidenav" [mode]="innerWidth <= 1400 ? 'over' : 'side'">
     <h1>Images</h1>
     <app-nav></app-nav>
-    <div></div>
-    <mat-progress-bar
-      class="sidenav__value"
-      [value]="30">
-    </mat-progress-bar>
+    <div class="size-bar__container">
+      <p class="size-bar__text">{{photosSize}} Mb / {{maxSize}} Mb</p>
+      <mat-progress-bar
+        class="size-bar__bar"
+        [color]="'red'"
+        [value]="photosSizePercent">
+      </mat-progress-bar>
+    </div>
+
   </mat-drawer>
 
   <div class="page-sidenav-content">

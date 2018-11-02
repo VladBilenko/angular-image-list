@@ -10,7 +10,6 @@ export class PhotosItemsService {
   private mockHttp = new EventEmitter();
 
   constructor(private compareService: CompareService) {
-
   }
 
   public fetchMockPhotos(sortType: SortTypes) {

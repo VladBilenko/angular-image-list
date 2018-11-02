@@ -41,3 +41,31 @@
     height: 150%;
   }
 }
+
+@media screen and (max-width: 1250px) {
+  :host {
+    width: 31.5%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  :host {
+    width: 45%;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  :host {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .image {
+    &__item {
+      height: auto;
+      width: 120%;
+    }
+  }
+}

@@ -23,10 +23,25 @@
   color: $main-page-white-color;
 }
 
-.sidenav__value {
-  position: absolute;
-  left: 50%;
-  bottom: 5rem;
-  width: 70%;
-  transform: translateX(-50%);
+.size-bar {
+  &__container {
+    position: absolute;
+    left: 50%;
+    bottom: 5rem;
+    width: 70%;
+    transform: translateX(-50%);
+  }
+
+  &__text {
+    color: $main-page-orange-color;
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .mat-drawer {
+
+  }
+}
+
+
+

@@ -3,3 +3,11 @@
     padding: 1.5rem 5rem;
   }
 }
+
+@media screen and (max-width: 766px) {
+  .main {
+    &-container {
+      padding: 1.5rem 2rem;
+    }
+  }
+}

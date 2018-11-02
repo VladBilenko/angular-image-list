@@ -35,7 +35,7 @@ export class PhotosComponent implements OnInit {
     );
   }
 
-  private changeSort(sortType: any) {
+  public changeSort(sortType: any) {
     this.selectedSorting = sortType.value;
     this.getPhotos();
   }

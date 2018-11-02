@@ -22,3 +22,11 @@
   background-color: $main-page-purple-color;
   color: $main-page-white-color;
 }
+
+.sidenav__value {
+  position: absolute;
+  left: 50%;
+  bottom: 5rem;
+  width: 70%;
+  transform: translateX(-50%);
+}
